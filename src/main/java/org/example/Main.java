@@ -476,7 +476,8 @@ public class Main {
                         System.out.println("your request confirmed by an admin");
                         int addingFund = (int) (userValue.getAddFund() + userValue.getWallet());
                         userValue.setWallet(addingFund);
-                        adminMenu();
+                        userValue.getWallet();
+                        userMenu();
                     }
 
                 }
