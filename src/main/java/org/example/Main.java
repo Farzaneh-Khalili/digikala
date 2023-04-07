@@ -13,12 +13,37 @@ import java.time.format.DateTimeFormatter;
 
 public class Main {
     static User user1 = new User("firstuser", "pass1234", "user.one@gmail.com",
-            "09901231020", "tehran", 120);
+            "09901231020", "tehran", 2000);
+    static User user2 = new User("heli", "heli7496", "h.ja@gmail.com", "09122584130", "iran.kerman" , 150);
     static Seller seller1 = new Seller("Goody", "1212pass", 570, true);
     static Shop shop1 = new Shop();
     static Admin mainAdmin = new Admin("mainAdmin", "1973admin", "admin.shop059@gamil.com");
     static Watch watch1 = new Watch("watch1",70,9,"good, more beautiful in close look, lovely",
             511, "Goody", "yes", "Omega","Switzerland");
+    static Mobile mobile1 = new Mobile("samsungA51", 1000, 5, "good and beautiful", 411, "Goody", "samsung",
+            6, 128, 17, "white");
+
+    static Mobile mobile2 = new Mobile("samsungA33", 700, 7, "didn't like it that much, nice one", 412 , "Goody",
+            "samsung" , 6, 128, 25, "blue");
+
+    static Book book1 = new Book("one", 15, 10, "love this book", 111, "Goody", "person", 2011, 2 , "romance", 150, "+12");
+    static Headphones headphone1 = new Headphones("QCY T13" , 150, 12, "good thing , bought it for gift and i think it's nice" , 211, "Goody" ,
+            "QCY", "white", "Bluetooth", "yes");
+    static SportEquipment sport1 = new SportEquipment("gym.ball" , 20, 41, "usefull", 311, "Goody"
+    , "Cross" , "fitness", "colorfull" , "US");
+    static Cloth cloth1 = new Cloth("Tshirt" , 50, 14 , "like this color and kind", 611, "Goody", "colorful" , "small" , "Floriza" , "no gender" , "cottton");
+    static Cloth cloth2 = new Cloth("hoodi" , 75 , 5 , "its soo good and warm , love it more than on screen" , 612 , "Goody" , "black" , "large" , "E1649" , "women", "fluff");
+    static Bag bag1 = new Bag("small.bag" , 80, 22, "lovely" , 711, "Goody" ,
+            "Firisky" , "black" , "leather" , "button-like", 2);
+    static Shoes shoe1 = new Shoes("shoes" , 150, 3, "" , 811, "Goody", "France" , "gray", 38, "leather");
+
+    static Painting painting1 = new Painting("sky.painting", 50, 1 , "", 911, "Goody" , "Olivia" , 2, "Italy" , "watercolor");
+    static Toy toy1 = new Toy("exploding.cats" , 20, 12, "i love this game" , 1011, "Goody" , "+15" , 6, 60 , "strategy");
+    static Rug rug1 = new Rug("persian.rug", 600, 3, "nice rug with beautiful pattern", 1111, "Goody", "old" , "Iran", 10000, "yes");
+
+    static Order order1 = new Order("3/11/2120", 150, "firstuser", "Goody");
+
+
 
 
     static HashMap<String, User> mapperUser = new HashMap<String, User>();
@@ -43,7 +68,43 @@ public class Main {
 
         shop1.addToListOfAllProducts(watch1);
         shop1.addToListOfAllWatches(watch1);
-        user1.addToShoppingCartUser(watch1);
+        shop1.addToListOfAllProducts(toy1);
+        shop1.addToListOfAllProducts(painting1);
+        shop1.addToListOfAllProducts(cloth1);
+        shop1.addToListOfAllProducts(cloth2);
+        shop1.addToListOfAllProducts(sport1);
+        shop1.addToListOfAllProducts(bag1);
+        shop1.addToListOfAllProducts(shoe1);
+        shop1.addToListOfAllProducts(rug1);
+        shop1.addToListOfAllProducts(mobile1);
+        shop1.addToListOfAllProducts(mobile2);
+        shop1.addToListOfAllProducts(headphone1);
+        user1.addToShoppingCartUser(book1);
+        shop1.addToListOfAllPaintings(painting1);
+        shop1.addToListOfAllRugs(rug1);
+        shop1.addToListOfAllToy(toy1);
+        shop1.addToListOfAllShoes(shoe1);
+        shop1.addToListOfAllCloths(cloth1);
+        shop1.addToListOfAllCloths(cloth2);
+        shop1.addToListOfAllMobiles(mobile1);
+        shop1.addToListOfAllMobiles(mobile2);
+        shop1.addToListOfAllSportEquipment(sport1);
+        shop1.addToListOfAllHeadphones(headphone1);
+        shop1.addToListOfAllBags(bag1);
+
+        user1.addToShoppingCartUser(bag1);
+        user1.addToShoppingCartUser(cloth1);
+        user1.addToShoppingCartUser(sport1);
+        user1.addToShoppingCartUser(painting1);
+        user1.addToListOfPurchasedProduct(toy1);
+        user1.addToListOfPurchasedProduct(book1);
+        user1.addToListOfPurchasedProduct(watch1);
+        user1.addToListOfOrders(order1);
+
+        user2.addToListOfPurchasedProduct(painting1);
+        user2.addToShoppingCartUser(cloth2);
+        user2.addToShoppingCartUser(headphone1);
+        user2.addToListOfPurchasedProduct(sport1);
 
         shop1.addToListOfAllCompanyNames("Goody");
         shop1.addToListOfAllAccounts(seller1);
@@ -350,7 +411,7 @@ public class Main {
                     userMenu();
                 } else {
                     userValue.getShoppingCart();
-                    System.out.println("what do you want to do?\n1.remove an item\t2.change number of a product\t3.finalize your shopping cart\t4.back to the menu");
+                    System.out.println("what do you want to do?\n1.remove an item\t2.finalize your shopping cart\t3.back to the menu");
                     int shoppingCommand = scanner.nextInt();
                     switch (shoppingCommand) {
                         case 1 :
@@ -368,10 +429,6 @@ public class Main {
                             break;
 
                         case 2 :
-
-                            break;
-
-                        case 3 :
 
                             float userWallet = userValue.getWallet();
                             float totalPrice = userValue.getTheTotalPrice();
@@ -397,7 +454,7 @@ public class Main {
                             }
                             break;
 
-                        case 4 :
+                        case 3 :
                             userMenu();
                             break;
 
@@ -410,6 +467,19 @@ public class Main {
                 break;
 
             case 3 :
+                if (!userValue.getAskFund()) {
+                    System.out.println("There is " + user1.getWallet() + "$ in your wallet");
+                    userMenu();
+                } else {
+                    File newFile = new File("C:\\Users\\Farzaneh\\digikala.txt");
+                    if (newFile.length() == 0) {
+                        System.out.println("your request confirmed by an admin");
+                        int addingFund = (int) (userValue.getAddFund() + userValue.getWallet());
+                        userValue.setWallet(addingFund);
+                        adminMenu();
+                    }
+
+                }
                 System.out.println("There is " + user1.getWallet() + "$ in your wallet");
                 userMenu();
                 break;
@@ -424,6 +494,7 @@ public class Main {
                      PrintWriter p = new PrintWriter(b);) {
 
                     p.println("requests for adding fund (" + requestFund + ") for " + userValue.getUsername() + ".Wait for confirm");
+                    userValue.setAskFund(true);
 
 
                 } catch (IOException i) {

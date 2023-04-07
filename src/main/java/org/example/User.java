@@ -7,7 +7,8 @@ public class User extends Admin{
     private String address;
     private float wallet;
     private boolean didFinalized;
-    private int addFund;
+    private float addFund;
+    private boolean askFund;
     private ArrayList<Order> listOfOrders = new ArrayList<Order>();
     private ArrayList<Product> listOfPurchasedProduct = new ArrayList<Product>();
     private ArrayList<Product> shoppingCart = new ArrayList<Product>();
@@ -48,8 +49,11 @@ public class User extends Admin{
         this.wallet = wallet;
     }
 
-    public void setAddFund(int addFund) {
+    public void setAddFund(float addFund) {
         this.addFund = addFund;
+    }
+    public void setAskFund(boolean askFund) {
+        this.askFund = askFund;
     }
 
     public void setListOfOrders(ArrayList<Order> listOfOrders) {
@@ -81,10 +85,13 @@ public class User extends Admin{
         return didFinalized;
     }
 
-    public int getAddFund() {
+    public float getAddFund() {
         return addFund;
     }
 
+    public boolean getAskFund() {
+        return askFund;
+    }
     public ArrayList<Order> getListOfOrders() {
         return listOfOrders;
     }

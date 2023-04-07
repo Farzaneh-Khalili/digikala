@@ -7,16 +7,16 @@ public class Cloth extends Product{
     private String color;
     private String size;
     private String brand;
-    private String sex;
+    private String gender;
     private String material;
 
     public Cloth(String name, float price, int quantity, String listOfComments, int ID
-            , String companyOfSeller, String color, String size,String brand, String sex, String material) {
+            , String companyOfSeller, String color, String size,String brand, String gender, String material) {
         super(name, price, quantity, listOfComments, ID, companyOfSeller);
         this.color = color;
         this.size = size;
         this.brand = brand;
-        this.sex = sex;
+        this.gender = gender;
         this.material = material;
     }
 
@@ -31,7 +31,7 @@ public class Cloth extends Product{
                 ", color= " + color +
                 ", size= " + size +
                 ", brand= " + brand +
-                ", sex= " + sex +
+                ", gender = " + gender +
                 ", material= " + material;
     }
 }
