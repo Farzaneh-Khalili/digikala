@@ -61,6 +61,10 @@ public class Main {
         shop1.addToListOfAllAccounts(user1);
         shop1.addToListOfAllUsernames("firstuser");
         mapperUser.put("firstuser", user1);
+        shop1.addToListOfAllAccounts(user2);
+        mapperUser.put("heli", user2);
+        shop1.addToListOfAllUsernames("heli");
+        shop1.addToListOfAllUsers(user2);
 
         shop1.addToListOfAllAdmins(mainAdmin);
         shop1.addToListOfAllAccounts(mainAdmin);
@@ -1019,7 +1023,9 @@ public class Main {
                 break;
 
             case 2 :
-
+                System.out.println("Here are the users' account ↷");
+                shop1.showUserAccount();
+                adminMenu();
                 break;
 
             case 3 :

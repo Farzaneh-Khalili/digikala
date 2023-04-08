@@ -303,4 +303,11 @@ public class Shop {
         }
     }
 
+    public void showUserAccount() {
+        for (int i = 0; i < listOfAccounts.size(); i++) {
+            System.out.println(listOfAccounts.get(i).toString());
+            System.out.println("\n");
+        }
+    }
+
 }

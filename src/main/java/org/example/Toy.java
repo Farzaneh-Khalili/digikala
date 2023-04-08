@@ -23,7 +23,7 @@ public class Toy extends Product {
                 "name= " + getName()  +
                 ", price= " + getPrice() + "$" +
                 ", number of available = " + getQuantity() +
-                ", comments about it = " + getListOfComments() + "\n" +
+                ", comments about it :( " + getListOfComments() + ")\n" +
                 ", Seller= " + getCompanyOfSeller() +
                 ", numberOfPlayers= " + numberOfPlayers +
                 ", ageOfPlaying= " + ageOfPlaying +

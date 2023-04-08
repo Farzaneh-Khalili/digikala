@@ -8,7 +8,6 @@ public class Product {
     private String listOfComments;
     private int ID;
     private String companyOfSeller;
-    private int orderedNumber;
 
     //Getter methods
 
@@ -35,10 +34,6 @@ public class Product {
 
     public String getCompanyOfSeller() {
         return companyOfSeller;
-    }
-
-    public void setOrderedNumber(int number) {
-        this.orderedNumber = orderedNumber;
     }
 
     public Product(String name, float price, int quantity, String listOfComments, int ID, String companyOfSeller) {
