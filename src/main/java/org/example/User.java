@@ -28,8 +28,8 @@ public class User extends Admin{
     public void addToListOfPurchasedProduct(Product newProduct) {
         listOfPurchasedProduct.add(newProduct);
     }
-    public void addToShoppingCart(Product newProduct) {
-        shoppingCart.add(newProduct);
+    public void addToShoppingCartUser(Product addProduct) {
+        shoppingCart.add(addProduct);
     }
 
     //Setter methods
@@ -174,9 +174,6 @@ public class User extends Admin{
                 "~wallet : " + wallet + "$ ";
     }
 
-    public void addToShoppingCartUser(Product addProduct) {
-        shoppingCart.add(addProduct);
-    }
 
     public boolean removeFromShoppingCart(String nameOfTheProduct) {
         boolean existence = false;
